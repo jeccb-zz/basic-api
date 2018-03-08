@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  basic-api:
+    image: basic-api:1.0
+    links:
+      - database
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: database
+
+  database:
+    image: postgres:9.3.17
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
