@@ -22,6 +22,7 @@ module Api
       end
 
       private
+      
       def post_params
         params.permit(:title, :body)
       end
